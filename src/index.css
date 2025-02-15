@@ -67,6 +67,7 @@ button:hover {
 }
 button:hover:disabled {
   border-color: transparent;
+  cursor: auto;
 }
 button:focus,
 button:focus-visible {

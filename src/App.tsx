@@ -11,6 +11,9 @@ function App() {
 
   return (
     <>
+      {/* Hyödynnetään ternary operaatiota. Jos isResult-tilamuuttujan arvo 
+      on tosi, näytetään StartView-komponentti ja muussa tapauksessa näytetään 
+      EndView-komponentti */}
       {!isResult ?
         <StartView
           setIsResult={setIsResult}
