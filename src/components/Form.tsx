@@ -37,7 +37,7 @@ export function Form({ setIsResult, setFeeling, setIcon }: FormProps) {
 
     return (
         <>
-            <h4>What are you currently thinking?</h4>
+            <h2>What are you currently thinking?</h2>
             <form onSubmit={getSentence}>
                 <input
                     placeholder='Write a word or a sentence here'

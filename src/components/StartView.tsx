@@ -6,7 +6,7 @@ export function StartView({ setIsResult, setFeeling, setIcon }: StartViewProps) 
         <>
             <div>
                 {/*Näytetään otsikko ja lomakekomponentti: */}
-                <h6>Sentiment analysis</h6>
+                <h4>Sentiment analysis</h4>
                 <Form
                     setIsResult={setIsResult}
                     setFeeling={setFeeling}
