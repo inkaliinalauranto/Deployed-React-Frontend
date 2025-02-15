@@ -12,6 +12,9 @@ export function StartView({ setIsResult, setFeeling, setIcon }: StartViewProps) 
                     setFeeling={setFeeling}
                     setIcon={setIcon}
                 />
+                <p className="read-the-docs">
+                    This application assesses the overall sentiment of the text you enter.
+                </p>
             </div>
         </>
     )

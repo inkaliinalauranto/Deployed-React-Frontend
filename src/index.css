@@ -40,7 +40,7 @@ input {
   border: none;
   field-sizing: content;
   min-width: 14em;
-  max-width: 50em;
+  max-width: 40em;
   background-color: #242424;
   border-bottom: 1px solid rgb(100, 99, 99);
   &:focus {

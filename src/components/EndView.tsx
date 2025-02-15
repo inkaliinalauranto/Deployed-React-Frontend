@@ -21,7 +21,7 @@ export function EndView({ feeling, icon, setIsResult }: EndViewProps) {
             saadaan propseina parent- eli App-komponentilta.*/}
             <div className="card">
                 <p>
-                    Your sentiment is {feeling}
+                    Your text is {feeling}
                 </p>
                 <img src={icon} className="logo react" alt="Positive logo" />
                 <button disabled={isDisabled} onClick={handleClick}>Back</button>

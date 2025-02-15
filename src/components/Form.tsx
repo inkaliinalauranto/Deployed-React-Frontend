@@ -44,7 +44,7 @@ export function Form({ setIsResult, setFeeling, setIcon }: FormProps) {
                     type="text" value={inputSentence}
                     onChange={(e) => setInputSentence(e.target.value)} />
                     
-                <button disabled={isDisabled} type="submit">Send</button>
+                <button disabled={isDisabled} type="submit">Analyze</button>
             </form>
         </>
     )
