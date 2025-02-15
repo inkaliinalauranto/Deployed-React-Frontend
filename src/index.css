@@ -30,9 +30,7 @@ input {
   margin: 10px;
   border: none;
   font-size: 1.3em;
-  field-sizing: content;
-  min-width: 14em;
-  max-width: 40em;
+  width: fit-content;
   background-color: #242424;
   border-bottom: 1px solid rgb(100, 99, 99);
   &:focus {
