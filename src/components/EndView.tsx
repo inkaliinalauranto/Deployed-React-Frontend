@@ -20,9 +20,7 @@ export function EndView({ feeling, icon, setIsResult }: EndViewProps) {
             sentiment-analyysin) tulos. Tulos ja siihen liittyvä kuva 
             saadaan propseina parent- eli App-komponentilta.*/}
             <div className="card">
-                <p>
-                    Your text is {feeling}
-                </p>
+                <p>Your text is {feeling}</p>
                 <img src={icon} className="logo react" alt="Positive logo" />
                 <button disabled={isDisabled} onClick={handleClick}>Back</button>
             </div>

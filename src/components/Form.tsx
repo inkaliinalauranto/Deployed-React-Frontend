@@ -3,28 +3,50 @@ import positive from '../assets/positive.svg'
 import negative from '../assets/negative.svg'
 import neutral from '../assets/neutral.svg'
 import { FormProps } from "../models/layout"
+import { getSentiment } from "../services/sentiment"
 
-export function Form({ setIsResult, setFeeling, setIcon }: FormProps) {
+export function Form({ setIsLoading, setIsResult, setFeeling, setIcon }: FormProps) {
     const [isDisabled, setIsDisabled] = useState(true)
     const [inputSentence, setInputSentence] = useState("")
 
     function getSentence(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
+        setIsLoading(true)
         setInputSentence("")
         setIsDisabled(true)
         setIsResult(true)
+
+        // Tehtävässä 3 käytetty tapa, jossa tunne arvottiin backendin 
+        // puuttumisen vuoksi:
+        // --------------------------------------------------------------------
         // Arvotaan lauseen tunnelma, koska backendia ei vielä ole:
-        const feelings = ["negative", "neutral", "positive"]
-        const icons = [negative, neutral, positive]
+        // const feelings = ["negative", "neutral", "positive"]
+        // const icons = [negative, neutral, positive]
 
-        // Tallennetaan muuttujaan satunnainen numero väliltä 0-2: 
-        const randomNumber = Math.floor(Math.random() * 3)
-        // console.log(randomNumber)
+        // // Tallennetaan muuttujaan satunnainen numero väliltä 0-2: 
+        // const randomNumber = Math.floor(Math.random() * 3)
+        // // console.log(randomNumber)
 
-        // Asetetaan feelings-arraysta feeling-tilamuuttujaan arvotun numeron 
-        // määrittämän alkion arvo:
-        setFeeling(feelings[randomNumber])
-        setIcon(icons[randomNumber])
+        // // Asetetaan feelings-arraysta feeling-tilamuuttujaan arvotun numeron 
+        // // määrittämän alkion arvo:
+        // setFeeling(feelings[randomNumber])
+        // setIcon(icons[randomNumber])
+        // --------------------------------------------------------------------
+
+
+        const feelings = ["positive", "neutral", "negative"]
+        const icons = [positive, neutral, negative]
+
+        const request = { "text": inputSentence }
+
+        getSentiment(request).then((response) => {
+            const feeling = response.result
+            const iconIndex = feelings.indexOf(feeling)
+
+            setFeeling(feeling)
+            setIcon(icons[iconIndex])
+            setIsLoading(false)
+        })
     }
 
     useEffect(() => {
@@ -43,7 +65,7 @@ export function Form({ setIsResult, setFeeling, setIcon }: FormProps) {
                     placeholder='Write a word or a sentence here'
                     type="text" value={inputSentence}
                     onChange={(e) => setInputSentence(e.target.value)} />
-                    
+
                 <button disabled={isDisabled} type="submit">Analyze</button>
             </form>
         </>
