@@ -7,7 +7,7 @@ import { LoadingView } from './components/LoadingView'
 function App() {
 
   const [isResult, setIsResult] = useState(false)
-  const [feeling, setFeeling] = useState("")
+  const [finalFeeling, setFeeling] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [icon, setIcon] = useState("")
 
@@ -26,7 +26,7 @@ function App() {
         : isLoading
           ? <LoadingView />
           : <EndView
-            feeling={feeling}
+            feeling={finalFeeling}
             icon={icon}
             setIsResult={setIsResult} />
       }

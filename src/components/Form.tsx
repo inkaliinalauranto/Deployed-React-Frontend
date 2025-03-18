@@ -5,7 +5,7 @@ import neutral from '../assets/neutral.svg'
 import { FormProps } from "../models/layout"
 import { getSentiment } from "../services/sentiment"
 
-export function Form({ setIsLoading, setIsResult, setFeeling, setIcon }: FormProps) {
+export function Form({ setIsLoading, setIsResult, setFinalFeeling, setIcon }: FormProps) {
     const [isDisabled, setIsDisabled] = useState(true)
     const [inputSentence, setInputSentence] = useState("")
 
@@ -43,7 +43,7 @@ export function Form({ setIsLoading, setIsResult, setFeeling, setIcon }: FormPro
             const feeling = response.result
             const iconIndex = feelings.indexOf(feeling)
 
-            setFeeling(feeling)
+            setFinalFeeling(feeling)
             setIcon(icons[iconIndex])
             setIsLoading(false)
         })

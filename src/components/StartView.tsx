@@ -10,7 +10,7 @@ export function StartView({ setIsLoading, setIsResult, setFeeling, setIcon }: St
                 <Form
                     setIsLoading={setIsLoading}
                     setIsResult={setIsResult}
-                    setFeeling={setFeeling}
+                    setFinalFeeling={setFeeling}
                     setIcon={setIcon}
                 />
                 <p className="read-the-docs">
