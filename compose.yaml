@@ -1,0 +1,6 @@
+services:
+  web:
+    build: .
+    restart: "no"
+    ports:
+      - "5500:8080"
