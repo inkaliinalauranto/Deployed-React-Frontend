@@ -8,6 +8,7 @@ Renderin kautta julkaistu sovellus löytyy osoitteesta https://deployed-sentimen
 
 ### Esimerkki käyttöönotetun sovelluksen toiminnasta
 ![Esimerkkikuva käyttöönotetun frontendin alkunäkymästä](./src/assets/deployed-frontend-start.png)
+
 ![Esimerkkikuva käyttöönotetun frontendin loppunäkymästä](./src/assets/deployed-frontend-end.png)
 
 ## Tehtävä 5, osa 2/2 - Frontend-ratkaisun käyttö build pipelinella Azuren kautta
