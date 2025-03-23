@@ -14,7 +14,7 @@ Renderin kautta julkaistu sovellus löytyy osoitteesta https://deployed-sentimen
 ## Tehtävä 5, osa 2/2 - Frontend-ratkaisun käyttö build pipelinella Azuren kautta
 Azuren kautta julkaistu sovellus löytyy osoitteesta https://kind-forest-04e83171e.6.azurestaticapps.net/.
 
-Frontendille on tehty myös Dockerfile ja compose.yaml paikallista ajoa ja kehitystä varten sekä mahdollista tulevaa käyttöönottoa varten muissa pilvipalveluissa.
+Frontendille on tehty myös Dockerfile ja compose.yaml paikallista ajoa ja kehitystä varten sekä muiden pilvipalveluiden kautta myöhemmin mahdollisesti tapahtuvaa käyttöönottoa varten.
 
 ## Projektin kloonaaminen ja konfigurointi paikallisesti
 Kloonaa repositorio:
