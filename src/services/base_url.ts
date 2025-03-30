@@ -1,0 +1,1 @@
+export const BASE_URL = "https://sentiment-backend-private-git-deployed-sentiment-analysis.2.rahtiapp.fi/api"

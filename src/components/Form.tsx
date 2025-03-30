@@ -4,15 +4,17 @@ import negative from '../assets/negative.svg'
 import neutral from '../assets/neutral.svg'
 import { FormProps } from "../models/layout"
 import { getSentiment } from "../services/sentiment"
+import { useSnapshot } from "valtio"
+import { authStore } from "../store/auth_store"
 
 export function Form({ setIsLoading, setIsResult, setFinalFeeling, setIcon }: FormProps) {
+    const snap = useSnapshot(authStore)
     const [isDisabled, setIsDisabled] = useState(true)
     const [inputSentence, setInputSentence] = useState("")
 
     function getSentence(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         setIsLoading(true)
-        setInputSentence("")
         setIsDisabled(true)
         setIsResult(true)
 
@@ -39,13 +41,14 @@ export function Form({ setIsLoading, setIsResult, setFinalFeeling, setIcon }: Fo
 
         const request = { "text": inputSentence }
 
-        getSentiment(request).then((response) => {
+        getSentiment(request, snap.token).then((response) => {
             const feeling = response.result
             const iconIndex = feelings.indexOf(feeling)
 
             setFinalFeeling(feeling)
             setIcon(icons[iconIndex])
             setIsLoading(false)
+            setInputSentence("")
         })
     }
 

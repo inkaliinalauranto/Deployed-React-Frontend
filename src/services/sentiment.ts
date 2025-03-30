@@ -1,19 +1,24 @@
 import { SentimentRequest, SentimentResponse } from "../models/sentiments"
-export async function getSentiment(request: SentimentRequest): Promise<SentimentResponse> {
+import { BASE_URL } from "./base_url"
 
+export async function getSentiment(request: SentimentRequest, token: string): Promise<SentimentResponse> {
     const options = {
         method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": `Bearer ${token}`
+        },
         body: JSON.stringify(request)
     }
 
-    const response = await fetch("https://sentiment-backend-private-git-deployed-sentiment-analysis.2.rahtiapp.fi/api/sentiment", options)
+    const response = await fetch(BASE_URL + "/sentiment", options)
 
     if (!response.ok) {
         throw new Error("Request dailed with statuscode: " + response.status)
     }
 
     const sentiment = await response.json()
-    
+
     return sentiment
 }
