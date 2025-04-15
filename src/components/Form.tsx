@@ -15,7 +15,7 @@ export function Form({ setIsLoading, setIsResult, setFinalFeeling, setIcon }: Fo
     function getSentence(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         setIsLoading(true)
-        setIsDisabled(true)
+        // setIsDisabled(true)
         setIsResult(true)
 
         // Tehtävässä 3 käytetty tapa, jossa tunne arvottiin backendin 
@@ -48,7 +48,7 @@ export function Form({ setIsLoading, setIsResult, setFinalFeeling, setIcon }: Fo
             setFinalFeeling(feeling)
             setIcon(icons[iconIndex])
             setIsLoading(false)
-            setInputSentence("")
+            // setInputSentence("")
         })
     }
 
@@ -65,6 +65,7 @@ export function Form({ setIsLoading, setIsResult, setFinalFeeling, setIcon }: Fo
             <h2>What are you currently thinking?</h2>
             <form onSubmit={getSentence}>
                 <input
+                    id="sentiment"
                     placeholder='Write a word or a sentence here'
                     type="text" value={inputSentence}
                     onChange={(e) => setInputSentence(e.target.value)} />
