@@ -22,3 +22,8 @@
   color: #5a5a5a;
   font-size: 0.8em;
 }
+
+.logout {
+  padding-top: 2em;
+  font-weight: bold;
+}

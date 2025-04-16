@@ -8,5 +8,9 @@ export const authStore = proxy({
     async login(credentials: AuthReq) {
         const result = await login(credentials)
         this.token = result.token
+    },
+
+    logout() {
+        this.token = ""
     }
 })

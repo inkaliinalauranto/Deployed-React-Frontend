@@ -3,6 +3,8 @@ import './App.css'
 import { StartView } from './components/StartView'
 import { EndView } from './components/EndView'
 import { LoadingView } from './components/LoadingView'
+import { Link, Outlet } from 'react-router-dom'
+import { authStore } from './store/auth_store'
 
 function App() {
 
@@ -30,6 +32,8 @@ function App() {
             icon={icon}
             setIsResult={setIsResult} />
       }
+      <Link to="/"><p onClick={() => {authStore.logout()}} className="logout">Logout</p></Link>
+      <Outlet />
     </>
   )
 }

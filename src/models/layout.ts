@@ -1,3 +1,5 @@
+import { JSX } from "react"
+
 export type StartViewProps = {
     setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
     setIsResult: React.Dispatch<React.SetStateAction<boolean>>,
@@ -16,4 +18,8 @@ export type FormProps = {
     setIsResult: React.Dispatch<React.SetStateAction<boolean>>,
     setFinalFeeling: React.Dispatch<React.SetStateAction<string>>,
     setIcon: React.Dispatch<React.SetStateAction<string>>
+}
+
+export type PrivateRouteProps = {
+    child: JSX.Element
 }
