@@ -18,7 +18,7 @@ export async function getSentiment(request: SentimentRequest, token: string): Pr
         throw new Error("Request dailed with statuscode: " + response.status)
     }
 
-    const sentiment = await response.json()
+    const result = await response.json()
 
-    return sentiment
+    return result
 }
